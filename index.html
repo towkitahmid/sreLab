@@ -2,54 +2,66 @@
 <html>
 <head>
     <title>My Information</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #6c5ce7;
+        }
+
+        hr {
+            width: 100px;
+            border: 0;
+            border-top: 3px solid #6c5ce7;
+            margin: 15px auto 25px;
+        }
+
+        .info {
+            background: white;
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .name {
+            color: #0984e3;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
 
-<h2>My Information</h2>
+    <h1>My Information</h1>
 
-<input id="name" placeholder="Name"><br><br>
-<input id="email" placeholder="Email"><br><br>
-<input id="phone" placeholder="Phone"><br><br>
-<input id="department" placeholder="Department"><br><br>
-<textarea id="about" placeholder="About Me"></textarea><br><br>
+    <hr>
 
-<button onclick="saveInfo()">Save</button>
-<button onclick="showInfo()">Show Saved Info</button>
+    <div class="info">
+        <p class="name">Towki Tahmid</p>
 
-<div id="result"></div>
+        <p><b>Department:</b> Information and Communication Engineering</p>
 
-<script>
-function saveInfo() {
-    let info = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        department: document.getElementById("department").value,
-        about: document.getElementById("about").value
-    };
+        <p><b>University:</b> Bangladesh University of Professionals</p>
 
-    localStorage.setItem("myInfo", JSON.stringify(info));
-    alert("Information Saved!");
-}
+        <p><b>Batch:</b> 24</p>
 
-function showInfo() {
-    let info = JSON.parse(localStorage.getItem("myInfo"));
+        <p><b>Interest:</b> Web Development, Technology & Event Management</p>
 
-    if (info) {
-        document.getElementById("result").innerHTML = `
-            <h3>Saved Information</h3>
-            Name: ${info.name}<br>
-            Email: ${info.email}<br>
-            Phone: ${info.phone}<br>
-            Department: ${info.department}<br>
-            University: ${info.university}<br>
-            About: ${info.about}
-        `;
-    } else {
-        document.getElementById("result").innerHTML = "No information saved.";
-    }
-}
-</script>
+        <p><b>Email:</b> example@email.com</p>
+    </div>
 
 </body>
 </html>
